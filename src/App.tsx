@@ -88,7 +88,7 @@ function App() {
                     </div>
 
                     <div className="slide-content">
-                        <div style={{ display: 'grid', gridTemplateColumns: currentSlide.visual ? '1fr 1fr' : '1fr', gap: '2rem', alignItems: 'center' }}>
+                        <div className={`responsive-grid ${currentSlide.visual ? 'has-visual' : ''}`}>
                             <div>
                                 <motion.div
                                     initial={{ y: 20, opacity: 0 }}
@@ -105,6 +105,7 @@ function App() {
                                     animate={{ scale: 1, opacity: 1 }}
                                     transition={{ delay: 0.3, type: 'spring' }}
                                     style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                    className="slide-visual"
                                 >
                                     {currentSlide.visual}
                                 </motion.div>
